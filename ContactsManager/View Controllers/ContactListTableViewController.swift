@@ -56,7 +56,9 @@ class ContactListTableViewController: UITableViewController {
         if editingStyle == .delete {
             let contact = ContactManager.sharedInstance.contacts[indexPath.row]
             ContactManager.sharedInstance.deleteContactNamed(contact: contact) { (_) in
-                tableView.deleteRows(at: [indexPath], with: .fade)
+                DispatchQueue.main.async {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
             }
         }
     }

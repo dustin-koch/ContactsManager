@@ -32,8 +32,10 @@ class ContactDetailViewController: UIViewController {
         let phone = phoneTextField.text
         let email = emailTextField.text
         ContactManager.sharedInstance.updateContactNamed(contact: contact, name: name, phone: phone, email: email) { (_) in
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
-        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - Helper functions
