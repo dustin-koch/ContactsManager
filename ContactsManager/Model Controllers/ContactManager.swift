@@ -55,7 +55,7 @@ class ContactManager {
         }
     }
     //update contact
-    func updateContactNamed(contact: Contact, name: String, phone: String, email: String, completion: @escaping (Bool) -> Void) {
+    func updateContactNamed(contact: Contact, name: String, phone: String?, email: String?, completion: @escaping (Bool) -> Void) {
         contact.name = name
         contact.phoneNumber = phone
         contact.emailAddress = email
