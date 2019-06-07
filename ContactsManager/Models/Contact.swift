@@ -12,8 +12,8 @@ import CloudKit
 class Contact {
     //MARK: - Properties
     var name: String
-    var phoneNumber: String
-    var emailAddress: String
+    var phoneNumber: String?
+    var emailAddress: String?
     //MARK: - CloudKit Properties
     let ckRecordID: CKRecord.ID
     
