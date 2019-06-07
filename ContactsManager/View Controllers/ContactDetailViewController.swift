@@ -10,6 +10,11 @@ import UIKit
 
 class ContactDetailViewController: UIViewController {
     
+    //MARK: - Outlets
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
     //MARK: - Landing Pad
     var contact: Contact?
 
@@ -18,5 +23,11 @@ class ContactDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    //MARK: - Actions
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        
+    }
+    
 }//END OF VIEW CONTROLLER

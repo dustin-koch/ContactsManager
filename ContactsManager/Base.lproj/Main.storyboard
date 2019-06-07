@@ -13,13 +13,13 @@
         <!--Contacts Manager-->
         <scene sceneID="agc-C3-aGf">
             <objects>
-                <tableViewController id="30x-Hc-MsI" sceneMemberID="viewController">
+                <tableViewController id="30x-Hc-MsI" customClass="ContactListTableViewController" customModule="ContactsManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8pW-6g-C79">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="VxG-AU-Zbe" detailTextLabel="MKE-FU-Ptf" rowHeight="111" style="IBUITableViewCellStyleSubtitle" id="ua4-w0-gEz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" textLabel="VxG-AU-Zbe" detailTextLabel="MKE-FU-Ptf" rowHeight="111" style="IBUITableViewCellStyleSubtitle" id="ua4-w0-gEz">
                                 <rect key="frame" x="0.0" y="28" width="414" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ua4-w0-gEz" id="Zir-gs-bNw">
@@ -54,17 +54,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts Manager" id="XpR-BB-tOo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cm7-zr-KOC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cm7-zr-KOC">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="30x-Hc-MsI" id="jeA-n3-E3N"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHB-Uh-cYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144.9275362318842" y="125.89285714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Detail View Controller-->
         <scene sceneID="jj4-nr-wMi">
             <objects>
-                <viewController id="xUF-mU-xKM" sceneMemberID="viewController">
+                <viewController id="xUF-mU-xKM" customClass="ContactDetailViewController" customModule="ContactsManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AqK-ma-4Mx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,8 +135,17 @@
                         <viewLayoutGuide key="safeArea" id="BmN-tA-UDg"/>
                     </view>
                     <navigationItem key="navigationItem" id="lvs-DG-ENq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Exm-DF-QZU"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Exm-DF-QZU">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="xUF-mU-xKM" id="gLT-DM-Lmw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="jCm-CD-nIW" id="OJD-rc-XvO"/>
+                        <outlet property="nameTextField" destination="taY-Eo-qG5" id="lfo-7z-HWY"/>
+                        <outlet property="phoneTextField" destination="zEq-ez-nBV" id="q1N-G8-xLx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCm-De-o3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
